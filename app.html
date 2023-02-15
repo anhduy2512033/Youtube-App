@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <section ng-app="App" ng-controller="mainController as main">
+        <div class="container">
+            <h2 ng-bind="main.message"></h2>
+            <div class="youtube-thumbnail col-md-4" ng-repeat="vid in main.videoListing">
+                <a ng-href="https://www.youtube.com/watch?v={{vid.id.videoId}}" target="_blank">
+                    <img ng-src={{vid.snippet.thumbnails.medium.url}}>
+                    <p ng-bind="vid.snippet.tittle"></p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script src="/app.js"></script>
+</body>
+</html>
